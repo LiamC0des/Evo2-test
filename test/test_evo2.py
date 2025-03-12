@@ -13,9 +13,9 @@ def read_prompts(input_file: Path) -> Union[List[List[str]]]:
     promptseqs: List[str] = []
     
     with open(input_file, encoding='utf-8-sig', newline='') as csvfile:
-        reader = csv.reader(csvfile)
-        next(reader)  # Skip header
-        for row in reader:
+        readers = csv.reader(csvfile)
+        next(readers)  # Skip header
+        for row in readers:
             promptseqs.append(row[0])
 
     return promptseqs
